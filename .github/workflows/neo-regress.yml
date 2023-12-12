@@ -24,12 +24,12 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: rm git repo
-        run: cd ~/work; rm -rf neo-server; rm -rf neo-test;
+        run: cd ~/test_action; rm -rf neo-server; rm -rf neo-test;
       - name: clone neo-server
-        run: cd ~/work; git clone git@github.com:machbase/neo-server.git;
+        run: cd ~/test_action; git clone git@github.com:machbase/neo-server.git;
       - name: clone neo-test
-        run: cd ~/work; git clone git@github.com:machbase/neo-test.git;
+        run: cd ~/test_action; git clone git@github.com:machbase/neo-test.git;
       - name: build machbase-neo
-        run: cd ~/work/neo-server; make machbase-neo;
+        run: cd ~/test_action/neo-server; make machbase-neo;
       - name: run test
-        run: cd ~/work/neo-test/testsuite; ntf startup.tc shutdown.tc;
+        run: cd ~/test_action/neo-test/testsuite; ntf startup.tc shutdown.tc;
