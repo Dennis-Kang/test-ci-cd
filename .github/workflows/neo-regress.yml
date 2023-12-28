@@ -35,7 +35,7 @@ jobs:
       - name: build machbase-neo
         run: cd ~/test_action/neo-server; make machbase-neo;
       - name: run test
-        run: cd ~/test_action/neo-test/testsuite; ntf startup.tc shutdown.tc
+        run: cd ~/test_action/neo-test/testsuite; ntf main.ts;
       - name: print result
         run: cd ~/test_action/neo-test/testsuite; cat summary.txt;
       - name: check run
